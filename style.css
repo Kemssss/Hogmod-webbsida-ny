@@ -58,14 +58,15 @@ main{
 .backdrop {
     background-image: url("Bilder/Bandfoto.jpg");
     background-size: cover;
-    background-position: center 45%;
+    background-position: center 50%;
     background-repeat: no-repeat;
     max-width: 100dvw;
     height: 600px;
 }
 
-pictures_frontpage img{
-    display:grid;
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(49dvw, 1fr));
 }
 
 h1{
