@@ -64,24 +64,24 @@ main{
     height: 600px;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(49dvw, 1fr));
-}
+
 
 h1{
     color:white;
     padding:10px;
+    font-size: 40px;
 }
 
 h2{
     color:white;
     padding:10px;
+    font-size: 30px;
 }
 
 p{
     color:white;
     padding:10px;
+    font-size: 20px;
 }
 
 p a{
