@@ -26,29 +26,29 @@ header{
 }
 
 nav img{
-    height:100px;
+    height:clamp(45px, 8vw, 100px);
     width:auto;
     filter:invert(1);
 }
 
 nav{
     flex-shrink:0;
-    height:150px;
+    min-height:clamp(70px, 12vw, 150px);
     background:#44211f;
-    color:#a79999;
     display:flex;
-    flex-direction:row;
+    flex-wrap:wrap;                      /* safety net on very narrow screens */
     justify-content:center;
     align-items:center;
-    gap:20px;
-    font-size: 50px;
+    gap:clamp(8px, 4.75vw, 70px);        /* replaces gap:20px and the margin-right */
+    padding:5px 10px;
+    font-size:clamp(18px, 4vw, 50px);
 }
 
 nav a{
-    margin-right:4.75vw;
     color:white;
     text-decoration:none;
     font-family:"Brush Script MT",cursive;
+    /* margin-right removed, gap handles the spacing */
 }
 
 nav a:hover{
@@ -58,25 +58,20 @@ nav a:hover{
 
 main{
     flex:1;
+    padding-bottom:50px;
     background:black;
 }
 
-h1{
-    color:white;
-    padding:10px;
-    font-size: 40px;
+h1{ 
+    font-size:clamp(28px, 5vw, 40px); padding:10px; color:white; 
 }
 
-h2{
-    color:white;
-    padding:10px;
-    font-size: 30px;
+h2{ 
+    font-size:clamp(22px, 4vw, 30px); padding:10px; color:white; 
 }
 
-p{
-    color:white;
-    padding:10px;
-    font-size: 20px;
+p { 
+    font-size:clamp(16px, 2.5vw, 20px); padding:10px; color:white; 
 }
 
 p a{
@@ -117,13 +112,12 @@ backbutton a:hover{
     text-decoration:underline;
 }
 
-.backdrop {
-    background-image: url("Bilder/Bandfoto.jpg");
-    background-size: cover;
-    background-position: center 50%;
-    background-repeat: no-repeat;
-    width: 100dvw;
-    height: 600px;
+.backdrop{
+    background-image:url("Bilder/Bandfoto.jpg");
+    background-size:cover;
+    background-position:center 50%;
+    background-repeat:no-repeat;
+    height:clamp(200px, 50vw, 600px);
 }
 
 .bild-spelningar{
@@ -138,4 +132,10 @@ backbutton a:hover{
 .cen{
     display:grid;
     place-content: center;
+}
+
+@media (max-width:600px){
+    .bild-spelningar{
+        background-position:15% center;  /* try 0%, 30%, 70%, 100% */
+    }
 }
