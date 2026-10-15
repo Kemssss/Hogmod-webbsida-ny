@@ -35,24 +35,36 @@ nav{
     flex-shrink:0;
     min-height:clamp(70px, 12vw, 150px);
     background:#44211f;
-    display:flex;
-    flex-wrap:wrap;                      /* safety net on very narrow screens */
-    justify-content:center;
     align-items:center;
-    gap:clamp(8px, 4.75vw, 70px);        /* replaces gap:20px and the margin-right */
     padding:5px 10px;
     font-size:clamp(18px, 4vw, 50px);
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    column-gap:clamp(8px, 3vw, 50px);
 }
 
 nav a{
     color:white;
     text-decoration:none;
     font-family:"Brush Script MT",cursive;
-    /* margin-right removed, gap handles the spacing */
+}
+
+
+.nav-left,
+.nav-right{
+    display:flex;
+    gap:clamp(8px, 4vw, 50px);
+}
+
+.nav-left{ 
+    justify-content:flex-end; 
+}
+
+.nav-right{ 
+    justify-content:flex-start; 
 }
 
 nav a:hover{
-    color:white;
     text-decoration:underline;
 }
 
@@ -136,6 +148,6 @@ backbutton a:hover{
 
 @media (max-width:600px){
     .bild-spelningar{
-        background-position:15% center;  /* try 0%, 30%, 70%, 100% */
+        background-position:15% center;
     }
 }
