@@ -146,8 +146,60 @@ backbutton a:hover{
     place-content: center;
 }
 
+.menu-toggle{
+    display:none;
+}
+
 @media (max-width:600px){
     .bild-spelningar{
         background-position:15% center;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .menu-toggle{
+        display:block;
+        background:none;
+        border:none;
+        color:white;
+        font-size:40px;
+        cursor:pointer;
+    }
+
+    .nav-left,
+    .nav-right{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        gap:10px;
+        padding:10px 0;
+    }
+
+    .nav-left{ order:3; }
+    .nav-right{ order:4; }
+
+    nav.open .nav-left,
+    nav.open .nav-right{
+        display:flex;
+    }
+
+    nav{
+        align-content:flex-start;
+        min-height:70px;
+        padding:0 10px;
+    }
+
+    nav > a,
+    .menu-toggle{
+        height:70px;
+        display:flex;
+        align-items:center;
     }
 }
