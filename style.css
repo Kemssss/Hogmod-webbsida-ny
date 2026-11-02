@@ -140,6 +140,16 @@ backbutton a:hover{
     background-repeat:no-repeat;
 }
 
+.bild-om-oss{
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("Bilder/Spelning3.jpg");
+    background-size:cover;
+    background-position:center 100%;
+    background-repeat:no-repeat;
+    height:clamp(200px, 40vw, 600px);
+}
+
 .cen{
     display:grid;
     place-content: center;
